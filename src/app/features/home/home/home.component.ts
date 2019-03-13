@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProductDataService, Topic } from 'src/app/core';
 
 @Component({
   selector: 'cbc-home',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+
+  data$: Observable<Topic>;
+
+  constructor(private productDataService: ProductDataService) { }
 
   ngOnInit() {
+    this.data$ = this.productDataService.getData('./assets/data/defaultData.json');
   }
 
 }
