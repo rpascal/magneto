@@ -5,6 +5,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatCardModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {ScrollDispatchModule} from '@angular/cdk/scrolling';
+
 
 @NgModule({
   imports: [
@@ -19,7 +21,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ScrollDispatchModule
   ],
   declarations: [],
   exports: [
@@ -30,7 +33,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ScrollDispatchModule
   ],
   entryComponents: [],
   providers: [MatSnackBarModule]

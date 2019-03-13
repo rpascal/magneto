@@ -1,22 +1,29 @@
 <ng-container *ngIf="data$ |async as data">
-<!-- fxLayout="row" fxLayout.sm="column" -->
-  <mat-card  class="example-card" *ngFor="let product of data.products">
-    <!-- fxLayout="column" fxLayoutAlign="center center" -->
-    <div  >
-      <img mat-card-image [src]="product.img">
+  <!-- fxLayout="row" fxLayout.sm="column" -->
+
+  <!-- fxLayout="column" fxLayoutAlign="center center"  -->
+  <cdk-virtual-scroll-viewport itemSize="450" class="viewport">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <!-- <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div> -->
+      <mat-card class="example-card" *cdkVirtualFor="let product of data.products; let index = index;">
+        <!-- fxLayout="column" fxLayoutAlign="center center" -->
+        <div>
+          <img mat-card-image [src]="product.img">
+        </div>
+        <div>
+          <!--  fxLayout="column" -->
+          <mat-card-header>
+            <mat-card-title>{{product.title}} - {{index}}</mat-card-title>
+            <mat-card-subtitle>{{product.subtitle}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{product.description}}
+            </p>
+          </mat-card-content>
+        </div>
+      </mat-card>
     </div>
-    <div>
-      <!--  fxLayout="column" -->
-      <mat-card-header>
-        <mat-card-title>{{product.title}}</mat-card-title>
-        <mat-card-subtitle>{{product.subtitle}}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          {{product.description}}
-        </p>
-      </mat-card-content>
-    </div>
-  </mat-card>
+  </cdk-virtual-scroll-viewport>
 
 </ng-container>

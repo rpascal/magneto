@@ -1,13 +1,10 @@
+
 .example-card {
   max-width: 400px;
   margin: 15px;
 }
 
-
-
-// .mat-card img {
-//   max-height: 25vh;
-//   max-width: auto;
-//   width: auto;
-//   margin: auto;
-// }
+.viewport {
+  height: calc(100vh - 64px);
+  width: 100vw;
+}
